@@ -1,0 +1,18 @@
+﻿{
+    "name": "Kogane.AutoRevertPrefabInstanceComponent.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:73d465c3b871bb04fa7da76a556fa633"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
