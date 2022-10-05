@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -73,14 +73,15 @@ namespace Kogane.Internal
                     PrefabUtility.RevertPrefabInstance( gameObject, InteractionMode.AutomatedAction );
                 }
 
-                var prefab                = PrefabUtility.GetCorrespondingObjectFromOriginalSource( gameObject );
-                var gameObjectTransform   = gameObject.transform;
-                var prefabTransform       = prefab.transform;
-                var isOverrideName        = gameObject.name != prefab.name;
-                var isOverridePosition    = gameObjectTransform.localPosition != prefabTransform.localPosition;
-                var isOverrideEulerAngles = gameObjectTransform.localEulerAngles != prefabTransform.localEulerAngles;
+                var prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource( gameObject );
+                // var gameObjectTransform   = gameObject.transform;
+                // var prefabTransform       = prefab.transform;
+                var isOverrideName = gameObject.name != prefab.name;
+                // var isOverridePosition    = gameObjectTransform.localPosition != prefabTransform.localPosition;
+                // var isOverrideEulerAngles = gameObjectTransform.localEulerAngles != prefabTransform.localEulerAngles;
 
-                if ( isOverrideName || isOverridePosition || isOverrideEulerAngles )
+                // if ( isOverrideName || isOverridePosition || isOverrideEulerAngles )
+                if ( isOverrideName )
                 {
                     Undo.RecordObject( gameObject, "Revert" );
                 }
@@ -90,15 +91,15 @@ namespace Kogane.Internal
                     gameObject.name = prefab.name;
                 }
 
-                if ( isOverridePosition )
-                {
-                    gameObjectTransform.localPosition = prefabTransform.localPosition;
-                }
-
-                if ( isOverrideEulerAngles )
-                {
-                    gameObjectTransform.localEulerAngles = prefabTransform.localEulerAngles;
-                }
+                // if ( isOverridePosition )
+                // {
+                //     gameObjectTransform.localPosition = prefabTransform.localPosition;
+                // }
+                //
+                // if ( isOverrideEulerAngles )
+                // {
+                //     gameObjectTransform.localEulerAngles = prefabTransform.localEulerAngles;
+                // }
             }
         }
     }
